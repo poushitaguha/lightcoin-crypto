@@ -82,18 +82,6 @@ class Withdrawal extends Transaction {
 
 // DRIVER CODE BELOW
 // We use the code below to "drive" the application logic above and make sure it's working as expected
-// const myAccount = new Account('billybob');
-
-// console.log('Starting Balance:', myAccount.balance);
-
-// const t1 = new Deposit(120.00, myAccount);
-// t1.commit();
-
-// const t2 = new Withdrawal(50.00, myAccount);
-// t2.commit();
-
-// console.log('Ending Balance:', myAccount.balance);
-
 
 const myAccount = new Account();
 
@@ -117,3 +105,26 @@ console.log('Ending Account Balance: ', myAccount.balance);
 console.log("Lookings like I'm broke again");
 
 console.log('Account Transaction History: ', myAccount.transactions);
+
+
+// Output in console
+
+// Starting Account Balance:  0
+// Attempting to withdraw even $1 should fail...
+// Commit result: false
+// Account Balance:  0
+// Depositing should succeed...
+// Commit result: true
+// Account Balance:  9.99
+// Withdrawal for 9.99 should be allowed...
+// Commit result: true
+// Ending Account Balance:  0
+// Lookings like I'm broke again
+// Account Transaction History:  [ Deposit {
+//     amount: 9.99,
+//     account: Account { username: undefined, transactions: [Circular] },
+//     time: 2019-06-26T16:05:15.159Z },
+//   Withdrawal {
+//     amount: 9.99,
+//     account: Account { username: undefined, transactions: [Circular] },
+//     time: 2019-06-26T16:05:15.159Z } ]
